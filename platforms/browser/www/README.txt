@@ -1,0 +1,83 @@
+Muhammad Bari
+
+Summary: Bugs
+         Library used for this project.
+         List the name of the files and description on what they do.
+
+--------------------------------------------------------------------------------
+
+Bugs:
+- Fidgeting paddle:
+  * When the device is tilted to the right/left and paddle reaches the edge of
+    the screen, the paddle fidget as you tilt towards the direction of the paddle.
+  * Can't seem to fix the issue
+  * ex: paddle is at the right side of the screen and touching the edge, tilting
+        the screen right will cause the paddle to fidget.
+
+- Loading assets in Phaser without server:
+  * NOT bug but security feature.
+    > This is implemented by Phaser for security reasons.
+  * Phaser will refuse to load the assets (images from assets folder) IF a server
+    is not being used.
+  * As long you're using a server, Phaser will load the assets.
+    > In this case, use phonegap to run the whole project.
+      > PhoneGap runs as server which will satisfy the security condition.
+
+--------------------------------------------------------------------------------
+
+Libraries:
+- Materialize: CSS framework to style the page/s
+  * link: http://materializecss.com/
+- Phaser: HTML 5 game framework to build the game
+  * Most the HTML 5 canvas code is handled by Phaser
+  * link: https://phaser.io/
+- HTML 5 accelerometer
+  * Used the HTMl 5 accelerometer instead of phonegap device motion plugin.
+  * It was one line of code to active and a small function for event listener.
+
+--------------------------------------------------------------------------------
+
+Files:
+
+HTML:
+- index.html: main menu of the project.
+- game.html: contains the game.
+
+CSS:
+- materialize.css and materialize.min.css
+  * CSS files from materialize
+- personal.css
+  * used only on index.html
+
+Assets: images used for creating the game.
+- ball.png
+- brick.png
+- paddle.png
+
+JavaScript
+- materialize.js and materialize.min.js: materialize CSS framework javascript
+  * required to use the CSS framework.
+- phaser.min.js: Phaser HTML 5 game framework
+  * essential for this project
+- game.js: defines what the game is.
+  * what to create
+  * what to load (assets in this case)
+  * what to do when updating the game
+    > move the ball or paddle
+    > check if the ball collided against a brick or the paddle
+- game_object.js: defines how the game objects are created
+  * create:
+    > paddle
+    > bricks
+    > ball
+    > score board
+    > life board
+- game_event.js: responds to certain events in the game
+  * when the ball hits a brick
+  * when the ball hits the paddle
+  * when ball reaches the bottom of the screen
+  * when the game has ended, either winning or losing the game
+- game_accelerometer.js: event listener for the accelerometer
+  * change the paddle position when a change is detected in the accelerometer
+
+--------------------------------------------------------------------------------
