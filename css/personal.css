@@ -1,0 +1,23 @@
+#helpBtn
+{
+    position: fixed;
+    right: 23px;
+    bottom: 23px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+.main-btn{
+   width: 100%;
+}
+
+#appName
+{
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+}
+
+#helpModel
+{
+    max-height: 500px;
+}
