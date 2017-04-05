@@ -59,24 +59,14 @@ function ballHitPaddle(ball, paddle)
 function showDialog()
 {
     ball.body.velocity.set(0, 0);   // stop the ball
-    navigator.notification.confirm(
-        "Play Again?",
-        onConfirm,
-        "Game Over",
-        ["No", "Yes"]
-    );
-}
-
-// event listener for the showDialog function.
-// reload the game if the user wants to play again
-// else go to the main menu
-function onConfirm(buttonId)
-{
-    if(buttonId == 2)   //yes, play again
+    var option = confirm("Play again?\n" +
+                         "Press OK to play again\n" +
+                         "Press Cancel to go to main menu");
+    if(option == true)          // play again
     {
         location.reload();
     }
-    else if(buttonId == 1)  //no, go to the main menu
+    else                        // go to main menu
     {
         window.location.href = "index.html";
     }
